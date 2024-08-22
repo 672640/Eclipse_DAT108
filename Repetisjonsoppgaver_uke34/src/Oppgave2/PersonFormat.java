@@ -3,13 +3,11 @@ package Oppgave2;
 public class PersonFormat implements Tallformat {
 	
 	public String somStreng(int tall) {
-		Person getFodselsaar;
-			
-			return getFodselsaar;
+		return String.valueOf(tall);
 			}
 	
-	void skrivUtFodselsaaret(Tallformat format) {
-		System.out.println(somStreng());
+	void skrivUtFodselsaaret(Tallformat format, Person person) {
+		String aarFormat = format.somStreng(person.fodselsaar());
+		System.out.println(person.fornamn() + " " + person.etternamn() + ", født i " + aarFormat);
 	}
 	}
-}
