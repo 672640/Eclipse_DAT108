@@ -5,20 +5,15 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		beregn regnUt = new beregn();
 		
-		int a;
-		int b;
 		
-		Scanner scanner = new Scanner(System.in);
+		System.out.println("12 + 13 = " + beregn.beregn(12, 13, '+'));
+		System.out.println("5 - 3 = " + beregn.beregn(5, 3, '-'));
+		System.out.println("5 / 0 = " + beregn.beregn(5, 0, '/'));
+		System.out.println("5 * 3 = " + beregn.beregn(5, 3, '*'));
+		System.out.println("Kva er størst av -5 eller 3?");
+		System.out.println(Math.max(-5, 3) + " er større enn " + Math.min(-5, 0));
 		
-		System.out.println("Legg inn det første nummeret");
-			a = scanner.nextInt();
-		System.out.println("Legg inn det andre nummeret");
-			b = scanner.nextInt();
-			
-		System.out.println("Kva skal eg printe ut?");	
-			scanner.close();
 	}
 
 }
