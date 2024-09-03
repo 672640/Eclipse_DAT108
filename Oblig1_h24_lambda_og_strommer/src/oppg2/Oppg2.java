@@ -10,18 +10,14 @@ public class Oppg2 {
 //		List<Ansatt> liste = new ArrayList<>();
 //	}
 	
-	private static void skrivUtAlle(List<Ansatt> ansatte) {
-	System.out.print(ansatte);
+	private static void skrivUtAlle(List<Ansatt> ansatte, Function<Ansatt, Integer> lonnsoppdatering) {
+		
+		
 	}
-	
 	
 	public static void main(String[] args) {
-//		Ansatt ansatt = new Ansatt();
 		
-		Function<Ansatt, Integer> skit = 
-
 	}
-
 }
 
 //Function<Integer, Double> half = a -> a / 2.0;
