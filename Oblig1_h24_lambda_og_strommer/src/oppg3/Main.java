@@ -1,6 +1,7 @@
 package oppg3;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,9 +22,9 @@ public class Main {
 		String berreEtternamn = ansatteList
 				.stream()
 				.map(a -> a.getEtternavn())
-				.reduce("", (akku, etternavn) -> akku.isEmpty() ? etternavn: akku + " " + etternavn);
+				.reduce("", (akku, etternavn) -> akku.isEmpty() ? etternavn: akku + ", " + etternavn);
 		
-		System.out.println("Etternamna: " + berreEtternamn);
+		System.out.println("Etternamna til dei ansette: " + berreEtternamn);
 		
 //Oppgåve b
 		long berreKvinner = ansatteList
@@ -33,7 +34,7 @@ public class Main {
 		if(berreKvinner == 1) {
 			System.out.println("Det er " + berreKvinner + " kvinne blant dei ansette");
 		} else {
-			System.out.println("Det er " + berreKvinner + " kvinner");
+			System.out.println("Det er " + berreKvinner + " kvinner blant dei ansette");
 		}
 //Oppgåve c
 		Double gjennomsnittslonnKvinner = ansatteList
@@ -48,9 +49,10 @@ public class Main {
         .stream()
         .filter(a -> a.getStilling().contains("sjef"))
         .peek(a -> a.setAarslonn((int)(a.getAarslonn() * 1.07)))
+//        .sorted((a, b) -> a.getAarslonn())
         .collect(Collectors.toList());
 		
-			System.out.println(sjefLonnsauking + " (original: "); //Korleis skal eg få den originale lønna???
+			System.out.println(sjefLonnsauking);
 		
 
 //Oppgåve e
@@ -58,11 +60,22 @@ public class Main {
 				.stream()
 				.filter(a -> a.getAarslonn() > 800000)
 				.count();
-		System.out.print("Det er " + tenerMeirEnn800000 + " ansette som tener meir enn 800000,-");
+		System.out.println("Det er " + tenerMeirEnn800000 + " ansette som tener meir enn 800000,-");
+		
+		//Oppgåve f
+		List<String> alleAnsatte = ansatteList
+				.stream()
+				.map(a -> a.getFornavn() + " " + a.getEtternavn())
+				.collect(Collectors.toList());
+			
+				System.out.println("Alle ansette: " + alleAnsatte);
+				
+//Oppgåve f
+		List<String> lagastLonn = ansatteList
+				.stream()
+				.filter(a -> a.getStilling().
 	}
 	
-//Oppgåve f
-//		String alleAnsette = ansatteList
-//				.stream()
-//				.
+
+				
 }

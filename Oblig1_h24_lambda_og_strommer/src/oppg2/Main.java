@@ -24,12 +24,12 @@ public class Main {
 	
 
 	public static void main(String[] args) {
-		List<Ansatt> ansatteList = Arrays.asList(new Ansatt("Gareth", "Stones", Kjonn.m, "IT", 600000),
-				new Ansatt("Jack", "Stickem", Kjonn.m, "Ing", 700000),
-				new Ansatt("John", "Table", Kjonn.m, "sjef", 900000),
-				new Ansatt("Mark", "Timberk", Kjonn.m, "Lyrikar", 500000),
-				new Ansatt("Mary", "Elisabeth", Kjonn.f, "kaptein", 1000000),
-				new Ansatt("Henry", "Bendri", Kjonn.m, "sjef", 1000000));
+		List<Ansatt> ansatteList = Arrays.asList(new Ansatt("Henrik", "Ibsen", Kjonn.m, "lyrikarsjef", 600000),
+			new Ansatt("Jonas", "Holland", Kjonn.m, "fotballspelar", 700000),
+			new Ansatt("Mari", "Kålnes", Kjonn.f, "skodespelar", 900000),
+			new Ansatt("Mika", "Surnes", Kjonn.i, "kaptein", 500000),
+			new Ansatt("Frøydis", "Skurda", Kjonn.f, "lærar", 1000000),
+			new Ansatt("Henry", "Bendri", Kjonn.m, "bemanningssjef", 1000000));
 		
 		
 		//Et fast kronetillegg
