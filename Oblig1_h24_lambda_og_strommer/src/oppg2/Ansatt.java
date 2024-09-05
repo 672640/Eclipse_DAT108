@@ -50,8 +50,8 @@ public class Ansatt {
 	}
 	@Override
 	public String toString() {
-		return "Ansatt [fornavn=" + fornavn + ", etternavn=" + etternavn + ", kjonn=" + kjonn + ", stilling=" + stilling
-				+ ", aarslonn=" + aarslonn + "]";
+		return "Ansatt " + fornavn + " " + etternavn + ", " + kjonn + ", i stillinga " + stilling
+				+ " og skal ha ei lønn på " + aarslonn + " kr";
 	}
 	
 	

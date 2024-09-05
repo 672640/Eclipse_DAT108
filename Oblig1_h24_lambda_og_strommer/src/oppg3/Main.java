@@ -2,24 +2,27 @@ package oppg3;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import oppg2.Ansatt;
 import oppg2.Kjonn;
 
 public class Main {
 
-	public static List<Ansatt> ansatteList = Arrays.asList(new Ansatt("Gareth", "Stones", Kjonn.m, "IT", 600000),
-			new Ansatt("Jack", "Stickem", Kjonn.m, "Ing", 700000),
-			new Ansatt("John", "Table", Kjonn.m, "IT", 900000),
-			new Ansatt("Mark", "Timberk", Kjonn.m, "Ing", 500000),
-			new Ansatt("Mary", "Elisabeth", Kjonn.f, "IT", 1000000));
+	public static List<Ansatt> ansatteList = Arrays.asList(new Ansatt("Henrik", "Ibsen", Kjonn.m, "lyrikarsjef", 600000),
+			new Ansatt("Jonas", "Holland", Kjonn.m, "fotballspelar", 700000),
+			new Ansatt("Mari", "Kålnes", Kjonn.f, "skodespelar", 900000),
+			new Ansatt("Mika", "Surnes", Kjonn.i, "kaptein", 500000),
+			new Ansatt("Frøydis", "Skurda", Kjonn.f, "lærar", 1000000),
+			new Ansatt("Henry", "Bendri", Kjonn.m, "bemanningssjef", 1000000));
 
 	public static void main(String[] args) {
 //Oppgåve a
 		String berreEtternamn = ansatteList
 				.stream()
 				.map(a -> a.getEtternavn())
-				.reduce("", (akku, etternavn) -> akku.isEmpty() ? etternavn: akku + " " + etternavn );
+				.reduce("", (akku, etternavn) -> akku.isEmpty() ? etternavn: akku + " " + etternavn);
+		
 		System.out.println("Etternamna: " + berreEtternamn);
 		
 //Oppgåve b
@@ -33,14 +36,23 @@ public class Main {
 			System.out.println("Det er " + berreKvinner + " kvinner");
 		}
 //Oppgåve c
-//		long gjennomsnittslønnKvinner = ansatteList
-//				.stream()
-//				.filter(a -> a.getKjonn() == a.getKjonn())
-//				.
+		Double gjennomsnittslonnKvinner = ansatteList
+				.stream()
+				.filter(a -> a.getKjonn().equals(a.getKjonn().f))
+				.collect(Collectors.averagingLong(a -> a.getAarslonn()));
+			System.out.println("Gjennomsnittslønna til kvinnene er " + gjennomsnittslonnKvinner + ",-");
+				
 	
 //Oppgåve d
-	
-	
+		List<Ansatt> sjefLonnsauking = ansatteList
+        .stream()
+        .filter(a -> a.getStilling().contains("sjef"))
+        .peek(a -> a.setAarslonn((int)(a.getAarslonn() * 1.07)))
+        .collect(Collectors.toList());
+		
+			System.out.println(sjefLonnsauking + " (original: "); //Korleis skal eg få den originale lønna???
+		
+
 //Oppgåve e
 		long tenerMeirEnn800000 = ansatteList
 				.stream()
@@ -50,7 +62,7 @@ public class Main {
 	}
 	
 //Oppgåve f
-		String alleAnsette = ansatteList
-				.stream()
-				.
+//		String alleAnsette = ansatteList
+//				.stream()
+//				.
 }

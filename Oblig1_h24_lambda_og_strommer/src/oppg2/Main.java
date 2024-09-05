@@ -26,9 +26,11 @@ public class Main {
 	public static void main(String[] args) {
 		List<Ansatt> ansatteList = Arrays.asList(new Ansatt("Gareth", "Stones", Kjonn.m, "IT", 600000),
 				new Ansatt("Jack", "Stickem", Kjonn.m, "Ing", 700000),
-				new Ansatt("John", "Table", Kjonn.m, "IT", 900000),
-				new Ansatt("Mark", "Timberk", Kjonn.m, "Ing", 500000),
-				new Ansatt("Mary", "Elisabeth", Kjonn.f, "IT", 1000000));
+				new Ansatt("John", "Table", Kjonn.m, "sjef", 900000),
+				new Ansatt("Mark", "Timberk", Kjonn.m, "Lyrikar", 500000),
+				new Ansatt("Mary", "Elisabeth", Kjonn.f, "kaptein", 1000000),
+				new Ansatt("Henry", "Bendri", Kjonn.m, "sjef", 1000000));
+		
 		
 		//Et fast kronetillegg
 		//lonnsoppgjor(ansatteList ,x->true,x -> x.setAarslonn(x.getAarslonn()+20));
