@@ -10,6 +10,8 @@ public class Servitor extends Thread{
 	}
 
 	public void run() {
-		
+		while(brett == null) {
+			System.out.print(namn + );
+		}
 	}
 }

@@ -19,11 +19,18 @@ public class Main {
 		HamburgerBrett brett = new HamburgerBrett(kapasitet);
 		
 		for(String namn: kokkar) {
+			if(brett > kapasitet) {
+				System.out.println(kokkar + " (kokk) er klar med hamburgaren, men brettet er fullt. Ventar!");
+			}
 			new Kokk(brett, namn).start();
 		}
 		for(String namn: servitorar) {
+			if(brett == null) {
+				System.out.println(servitorar + " (servitør) ønskar å ta hamburgar, men brettet er tomt. Venter!");
+			} else {
 			new Servitor(brett, namn).start();
 		}
+	}
 		
 		Thread t1 = new Thread() {
 			@Override

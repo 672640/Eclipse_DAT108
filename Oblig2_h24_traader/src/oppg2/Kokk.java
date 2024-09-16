@@ -1,20 +1,19 @@
 package oppg2;
 
 public class Kokk extends Thread{
+	private HamburgerBrett brett;
+	private String namn;
+	int
 
-	int brettAntall = 0;
-	
-	public synchronized void brettAntal {
-		brettAntal++;
-	}
-	
-	public Kokk(HamburgerBrett brett, String namn) {
-		while(brett == null) {
 			
-		}
+	public Kokk(HamburgerBrett brett, String namn) {
+		this.brett = brett;
+		this.namn = namn;
 	}
 	
 	public void run() {
-		
+		for(int i = 0; i < brett; i++) {
+			syn
+		}
 	}
 }
