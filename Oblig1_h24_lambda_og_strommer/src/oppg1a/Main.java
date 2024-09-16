@@ -2,11 +2,6 @@ package oppg1a;
 
 import java.util.*;
 
-@FunctionalInterface
-interface Samanlikn {
-	int samanlikn(String a, String b);
-}
-
 public class Main{
 	
 	public static void main(String[] args) {

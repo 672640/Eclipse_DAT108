@@ -1,6 +1,14 @@
 package oppg2;
 
-public class Servitor implements Runnable{
+public class Servitor extends Thread{
+	
+	boolean fortsette = true;
+	
+	
+	public Servitor(HamburgerBrett brett, String namn) {
+		
+	}
+
 	public void run() {
 		
 	}
