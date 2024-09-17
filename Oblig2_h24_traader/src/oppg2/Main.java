@@ -26,7 +26,7 @@ public class Main {
 		}
 		for(String namn: servitorar) {
 			if(brett == null) {
-				System.out.println(servitorar + " (servitør) ønskar å ta hamburgar, men brettet er tomt. Venter!");
+				System.out.println(servitorar + " (servitør) ønskar å ta hamburgar, men brettet er tomt. Ventar!");
 			} else {
 			new Servitor(brett, namn).start();
 		}
