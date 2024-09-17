@@ -19,13 +19,13 @@ public class Main {
 		HamburgerBrett brett = new HamburgerBrett(kapasitet);
 		
 		for(String namn: kokkar) {
-			if(brett > kapasitet) {
+			if(brett.getTalBrett() > kapasitet) {
 				System.out.println(kokkar + " (kokk) er klar med hamburgaren, men brettet er fullt. Ventar!");
 			}
 			new Kokk(brett, namn).start();
 		}
 		for(String namn: servitorar) {
-			if(brett == null) {
+			if(brett.getTalBrett() == 0) {
 				System.out.println(servitorar + " (servitør) ønskar å ta hamburgar, men brettet er tomt. Ventar!");
 			} else {
 			new Servitor(brett, namn).start();
