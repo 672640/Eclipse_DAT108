@@ -1,8 +1,11 @@
 package oppg2;
 
+import java.util.List;
+
 public class HamburgerBrett {
 
-private int brett = 0;
+private int brett;
+private int kapasitet;
 	
 	public void telOppBrett() {
 		brett++;
@@ -17,7 +20,12 @@ private int brett = 0;
 	}
 	
 	public HamburgerBrett(int kapasitet) {
-		
+		this.brett=0;
+		this.kapasitet=kapasitet-1;
+	}
+	
+	public boolean erFull() {
+		return this.brett==kapasitet;
 	}
 
 }

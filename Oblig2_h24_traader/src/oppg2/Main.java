@@ -3,33 +3,30 @@ package oppg2;
 public class Main {
 
 	public static void main(String[] args) {
+		
 		final String[] kokkar = {"Anne", "Erik", "Knut"};
 		final String[] servitorar = {"Mia", "Per"};
-		final int kapasitet = 4;
-
+		final int KAPASITET = 4;
+		
+		skrivUtHeader(kokkar, servitorar, KAPASITET);
+		HamburgerBrett brett = new HamburgerBrett(KAPASITET);
+		
 		String skrivUtKokkar = String.join(", ", kokkar);
 		String skrivUtServitorar = String.join(", ", servitorar);
 		
-		skrivUtHeader(kokkar, servitorar, kapasitet);
-			System.out.print("I denne simuleringa har vi " + "\n     "
-							 + kokkar.length + " kokkar: " + skrivUtKokkar + "\n     "
-							 + servitorar.length + " servitørar: " + skrivUtServitorar + "\n     "
-							 + "Kapasiteten til brettet er: " + kapasitet + " hamburgarar." + "\n     "
-							 + "Vi startar..." + "\n");
-		HamburgerBrett brett = new HamburgerBrett(kapasitet);
+		System.out.print("I denne simuleringa har vi " + "\n     "
+				 + kokkar.length + " kokkar: " + skrivUtKokkar + "\n     "
+				 + servitorar.length + " servitørar: " + skrivUtServitorar + "\n     "
+				 + "Kapasiteten til brettet er: " + KAPASITET + " hamburgarar." + "\n     "
+				 + "Vi startar..." + "\n");
 		
-		for(String namn: kokkar) {
-			if(brett.getTalBrett() > kapasitet) {
-				System.out.println(kokkar + " (kokk) er klar med hamburgaren, men brettet er fullt. Ventar!");
-			}
-			new Kokk(brett, namn).start();
+		for (String navn : kokkar) {
+			new Kokk(brett, navn).start();
 		}
-		for(String namn: servitorar) {
-			if(brett.getTalBrett() == 0) {
-				System.out.println(servitorar + " (servitør) ønskar å ta hamburgar, men brettet er tomt. Ventar!");
-			} else {
-			new Servitor(brett, namn).start();
+		for (String navn : servitorar) {
+			new Servitor(brett, navn).start();
 		}
+		
 	}
 		
 		Thread t1 = new Thread() {
@@ -38,7 +35,7 @@ public class Main {
 				
 			}
 		};
-	}
+	
 
 	private static void skrivUtHeader(String[] kokkar, String[] servitorar, int kapasitet) {
 		
