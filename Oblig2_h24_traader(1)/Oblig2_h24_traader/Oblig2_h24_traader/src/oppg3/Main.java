@@ -1,4 +1,4 @@
-package oppg2;
+package oppg3;
 
 public class Main {
 

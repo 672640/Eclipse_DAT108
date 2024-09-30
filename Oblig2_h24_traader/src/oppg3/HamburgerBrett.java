@@ -1,16 +1,16 @@
-package oppg2;
+package oppg3;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 
 public class HamburgerBrett {
 
-private List<Hamburger> brett;
+private BlockingQueue<Hamburger> brett;
 private int kapasitet;
 private int hamburgerIdTal = 0;
 
 	public HamburgerBrett(int kapasitet) {
-		this.brett= new ArrayList<>();
+		this.brett= new LinkedBlockingDeque<>(kapasitet);
 		this.kapasitet=kapasitet;
 	}
 	
@@ -50,9 +50,9 @@ private int hamburgerIdTal = 0;
 		return sb.toString();
 	}
 	
-	public Hamburger hentSisteHamburger() {
+	public Hamburger hentSisteHamburger() throws InterruptedException {
 		if(!erTom()) {
-			return brett.get(brett.size() - 1);
+			return brett.take();
 		} else {
 		return null;
 		}

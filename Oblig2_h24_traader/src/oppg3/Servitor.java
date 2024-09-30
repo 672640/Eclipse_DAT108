@@ -1,4 +1,4 @@
-package oppg2;
+package oppg3;
 
 import java.util.Random;
 
@@ -21,22 +21,22 @@ public class Servitor extends Thread{
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			synchronized(brett) {
+			if (brett.harHamburger()) {
+				brett.fjernHamburger();
+				Hamburger sisteHamburger = null;
 				try {
-					brett.wait();
+					sisteHamburger = brett.hentSisteHamburger();
 				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				if (brett.harHamburger()) {
-					brett.fjernHamburger();
-					Hamburger sisteHamburger = brett.hentSisteHamburger();
-					if(sisteHamburger != null) {
-						System.out.println(namn + " (servitør) tar av hamburger ◖" + sisteHamburger.getId() + "◗. Brett: " + brett.hentHamburgerListe());
-					} else {
-					System.out.println(namn + " (servitør) ønskar å ta hamburgaren, men brettet er tomt. Ventar!");
-				brett.notifyAll();
-					}
+				if(sisteHamburger != null) {
+					System.out.println(namn + " (servitør) tar av hamburger ◖" + sisteHamburger.getId() + "◗. Brett: " + brett.hentHamburgerListe());
+				} else {
+				System.out.println(namn + " (servitør) ønskar å ta hamburgaren, men brettet er tomt. Ventar!");
+			brett.notifyAll();
 				}
+				
 			}
 		}
 	}
